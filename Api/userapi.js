@@ -32,8 +32,8 @@ userRouter.post(
 
       // sanitize
       const createdUser = await newUser.save();
-      const instance = _.omit(createdUser.toJSON(), "password");
-      return res.status(201).send(instance);
+      // const instance = _.omit(createdUser.toJSON(), "password");
+      return res.status(201).send(createdUser);
     } catch (error) {
       next(error);
     }
